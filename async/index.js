@@ -20,8 +20,12 @@ function createCart(cart){
             reject(err)
         }
         const orderId ='123445'
+        //for the purpose of delay//
+        // till then the promise will be pending//
         if(orderId){
-            resolve(orderId)
+            setTimeout(function(){
+                resolve(orderId)
+            },5000)
         }
     })
 
