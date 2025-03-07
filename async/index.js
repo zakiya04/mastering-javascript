@@ -6,3 +6,14 @@ console.log(data);
 
 // the promise here will be in pending state and when we see inside the state will be fulfilled//
 //because js is single threaded, it will console log first and then change the state//
+
+// the result of a promise is always immutable ie. you cant change the state of a promise//
+
+data.then(function(){})
+.then(function(){
+
+})
+.then(function(){
+
+})
+// in order for data to move through the chained pipeline, we need to add retun after each then function// 
