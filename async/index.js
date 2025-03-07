@@ -1,19 +1,31 @@
-const api = 'some api';
-const data = fetch(api);
-// this will retun a promise with nothing in it mening that it will be an empty object with value undefined first//
-// but after the api is fteched, the data variable will have an object with data//
-console.log(data);
+//now we will create our own promise//
 
-// the promise here will be in pending state and when we see inside the state will be fulfilled//
-//because js is single threaded, it will console log first and then change the state//
+const cart = ['pants', 'shirt', 'jacket'];
+const promise = createCart(cart);
 
-// the result of a promise is always immutable ie. you cant change the state of a promise//
-
-data.then(function(){})
-.then(function(){
-
+promise.then(function(orderId){
+  console.log('Promise is working', orderId)
 })
-.then(function(){
 
-})
-// in order for data to move through the chained pipeline, we need to add retun after each then function// 
+
+//creation of promise//
+function createCart(cart){
+    const pr = new Promise(function(resolve,reject){
+        
+        function validateCart(){
+            console.log("cart is validated")
+        }
+        if(!validateCart){
+            const err = new Error ('cart not valid')
+            reject(err)
+        }
+        const orderId ='123445'
+        if(orderId){
+            resolve(orderId)
+        }
+    })
+
+   // the promise then gets returned to the corresponding variable//
+   return pr
+}
+ 
