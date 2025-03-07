@@ -6,16 +6,20 @@ const promise = createCart(cart);
 promise.then(function(orderId){
   console.log('Promise is working', orderId)
 })
+//this part handles the rejection part and gives a callback regarding that//
+.catch(function(err){
+    console.log(err.message)
+ })
 
 
 //creation of promise//
 function createCart(cart){
     const pr = new Promise(function(resolve,reject){
         
-        function validateCart(){
-            console.log("cart is validated")
+        function validateCart(cart){
+            return false
         }
-        if(!validateCart){
+        if(!validateCart(cart)){
             const err = new Error ('cart not valid')
             reject(err)
         }
