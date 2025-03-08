@@ -29,3 +29,19 @@ suspended from call stack and waits for 5 sec to resolve then gives Hello 1 and 
 it sees another await but 5 sec have been already done, so for 5 sec, after suspension, it will 
 console Hello 2 and then val2
 */
+
+// async with fetch//
+
+const api ='some api';
+
+async function getFn(){
+
+    const data = await fetch(api);
+    const value = await data.json();
+
+    /* 
+    the fetch actually returns a response object and when .json is applied to it, it again
+    becomes a promise and then the await then resolves it
+     */
+}
+// instead of .catch, here in async we have try catch method//
