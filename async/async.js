@@ -1,20 +1,29 @@
-// async is a keyword put before function to make it async//
+// using await with async//
+//this method is used to hanlde promises//
 
+let promise = new Promise ((resolve, reject) =>{
+    setTimeout(()=>{
+        return "This is a promise!"
+    },5000)
+})
 
-async function getData(){
-    // this async function always retutns a promise//
-    //either you rteun a made promise yourself or it just automatically converts//
-    return pr
+// before await//
+
+function getData(){
+    // the second console wont wait for the rpomise to get resolved and would just execute//
+    promise.then(res => console.log (res))
+    console.log('this is a function')
 }
 
-const dataPromise = getData(); // this is a promise//
+// after await//
 
-dataPromise.then((res)=> console.log(res)) // this is the value of the promise//
+async function getDataa(){
+    // this val wont be a promise but will give the value of resolve//
+    const val = await promise;
+    // js will first wait for the promise to be resolved and then it work go to the next line//
+    console.log('this is a function');
+    console.log(val);
 
-
-//your own promise//
-
-let pr = new Promise ((resolve,reject)=> {
-    resolve('hello')
-})
-// this will return a promise and wont be further wrapped in another promise//
+    // FIRST THE VAL WILL GET CONSOLED AND THEN THE SIMPLE CONSOLE//
+    // JS ENGINE WAITS FOR THE ASYNC TO GET RESOLVED//
+}
