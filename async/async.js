@@ -1,29 +1,31 @@
-// using await with async//
-//this method is used to hanlde promises//
-
-let promise = new Promise ((resolve, reject) =>{
+let p1 = new Promise((reject,resolve)=>{
     setTimeout(()=>{
-        return "This is a promise!"
+      console.log('This is the 1st promise!')
     },5000)
 })
 
-// before await//
+let p2 = new Promise((resolve, reject) =>{
+    setTimeout(()=>{
+        console.log('This is the 2nd promise')
+    },10000)
+})
 
-function getData(){
-    // the second console wont wait for the rpomise to get resolved and would just execute//
-    promise.then(res => console.log (res))
-    console.log('this is a function')
+async function getData(){
+    console.log('Hello World');
+
+    const val1 = await p1;
+    console.log('Hello 1');
+    console.log(val1);
+
+    const val2 = await p2;
+    console.log("Hello 2");
+    console.log(val2)
 }
+getData()
 
-// after await//
-
-async function getDataa(){
-    // this val wont be a promise but will give the value of resolve//
-    const val = await promise;
-    // js will first wait for the promise to be resolved and then it work go to the next line//
-    console.log('this is a function');
-    console.log(val);
-
-    // FIRST THE VAL WILL GET CONSOLED AND THEN THE SIMPLE CONSOLE//
-    // JS ENGINE WAITS FOR THE ASYNC TO GET RESOLVED//
-}
+/*
+in call stack, first the getData will go and conole Hello World, then the getData gets 
+suspended from call stack and waits for 5 sec to resolve then gives Hello 1 and val1 , then
+it sees another await but 5 sec have been already done, so for 5 sec, after suspension, it will 
+console Hello 2 and then val2
+*/
