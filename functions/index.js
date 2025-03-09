@@ -27,4 +27,18 @@ const CalculateCircumference = function(radius){
   }
   return output
 }
-console.log(CalculateCircumference(radis))
+console.log(CalculateCircumference(radis));
+// the problem with this is the repetition of similar type of code DRY PRICIPLE VIOLATION//
+
+const area = function(radius){
+    return Math.PI * radius * radius
+}
+const CalculateAreaa = function(radius,logic){
+    let output =[];
+    for (let i = 0; i ++ ; i< radius.length){
+      output.push(logic(radius[i]))
+    }
+    return output
+}
+console.log(CalculateAreaa(radis,area));
+// this becomes a more generic code and optimzes the code as well//
