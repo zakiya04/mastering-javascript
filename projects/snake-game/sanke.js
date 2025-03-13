@@ -4,7 +4,7 @@ ctx.fillStyle = "green";
 ctx.fillRect(0, 0, board.width, board.height);
 
 let snake = [{ x: 50, y: 50 }];
-let food = [{ x: 220, y: 250 }];
+let food = { x: 220, y: 250 };
 let direction = "right";
 let speed = 20;
 let score = 0;
@@ -34,7 +34,7 @@ function drawGame() {
   ctx.fillRect(snake[0].x, snake[0].y, 28, 28);
 
   ctx.fillStyle = "red";
-  ctx.fillRect(food[0].x, food[0].y, 25, 25);
+  ctx.fillRect(food.x, food.y, 25, 25);
 }
 
 function collision() {
@@ -45,6 +45,9 @@ function collision() {
     snake[0].y < 0
   ) {
     clearInterval(game);
+  }
+  if (snake[0].x === food.x && snake[0].y === food.y){
+    snake.push({x: snake[0].x + speed ,y: snake[0].y})
   }
 }
 function changeDirection() {}
