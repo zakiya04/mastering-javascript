@@ -46,9 +46,15 @@ function drawGame() {
   if(direction == 'UP') snake[0].y -= speed;
   if(direction == 'DOWN') snake[0].y += speed;
 
+  for(let i = snake.length - 1 ; i>0 ; i--){
+    snake[i].x = snake[i-1].x;
+    snake[i].y = snake[i-1].y;
+  }
 
-  ctx.fillStyle = "black";
-  ctx.fillRect(snake[0].x, snake[0].y, 28, 28);
+  for(let i = 0; i < snake.length ; i++){
+    ctx.fillStyle = 'black';
+    ctx.fillRect(snake[i].x , snake[i].y ,28, 28)
+  }
 
   ctx.fillStyle = "red";
   ctx.fillRect(food.x, food.y, 25, 25);
