@@ -41,6 +41,7 @@ function drawGame() {
     snake.push({})
   }
 
+  //position change//
   if(direction == 'LEFT') snake[0].x -= speed;
   if(direction == 'RIGHT') snake[0].x += speed;
   if(direction == 'UP') snake[0].y -= speed;
@@ -62,6 +63,7 @@ function drawGame() {
 }
 
 function collision() {
+  //when snakes reaches the walls //
   if (
     snake[0].x >= board.width ||
     snake[0].y >= board.height ||
@@ -75,7 +77,7 @@ function collision() {
     snake.push({x: snake[0].x + speed ,y: snake[0].y})
   }
 }
-// motion of the snake//
+
 
 
 
