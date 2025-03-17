@@ -1,4 +1,5 @@
 let container = document.getElementById("words");
+let toGuess = document.getElementById("slashes")
 
 const wordList = [
   {
@@ -74,3 +75,8 @@ function getWords() {
   }
 }
 getWords();
+
+function getRandomWord(){
+  const random = wordList[Math.floor(Math.random() * wordList.length - 1)];
+  
+}
