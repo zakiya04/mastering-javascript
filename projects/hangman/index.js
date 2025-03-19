@@ -64,12 +64,13 @@ const wordList = [
   },
 ];
 
-function getWords() {
+function getBtns() {
   let words = ["abcdefghijklmnopqrstuvxyz"];
   let letters = words[0].split("");
   for (let i = 0; i < letters.length; i++) {
     let btn = document.createElement("button");
     btn.innerText = letters[i];
+    btn.addEventListener('click', handleClick)
     btn.classList.add("btn");
     container.appendChild(btn);
   }
@@ -79,4 +80,7 @@ getWords();
 function getRandomWord(){
   const random = wordList[Math.floor(Math.random() * wordList.length - 1)];
   
+}
+function handleClick(){
+
 }
