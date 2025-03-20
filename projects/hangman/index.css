@@ -29,6 +29,12 @@ body{
     padding: 10px;
     padding-bottom: 5px;
 }
+#slashes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 .btn{
     padding: 0.5px;
     margin: 2px;
