@@ -1,5 +1,6 @@
 let container = document.getElementById("words");
-let toGuess = document.getElementById("slashes")
+let toGuess = document.getElementById("slashes");
+let box = document.getElementById('upper');
 
 const wordList = [
   {
@@ -75,12 +76,26 @@ function getBtns() {
     container.appendChild(btn);
   }
 }
-getWords();
+getBtns();
 
 function getRandomWord(){
+
   const random = wordList[Math.floor(Math.random() * wordList.length - 1)];
-  
+  const div = document.createElement('div');
+  div.classList.add('category');
+  div.textContent = `Your word is in category: ${random.category}`;
+  box.appendChild(div);
+
+  let word = random.names[Math.floor(Math.random() * random.names.length)];
+  for ( let i = 0; i < word.length ; i++){
+    let slash = document.createElement("p");
+    slash.classList.add('slash');
+    slash.innerText = '_';
+    slash.id = word[i]; 
+    toGuess.appendChild(slash)
+  }
 }
+getRandomWord()
 function handleClick(){
 
 }
