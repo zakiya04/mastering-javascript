@@ -1,6 +1,6 @@
 let container = document.getElementById("words");
 let toGuess = document.getElementById("slashes");
-let box = document.getElementById('upper');
+let box = document.getElementById("upper");
 
 const wordList = [
   {
@@ -65,37 +65,35 @@ const wordList = [
   },
 ];
 
-function getBtns() {
+function getWord() {
   let words = ["abcdefghijklmnopqrstuvxyz"];
   let letters = words[0].split("");
   for (let i = 0; i < letters.length; i++) {
     let btn = document.createElement("button");
     btn.innerText = letters[i];
-    btn.addEventListener('click', handleClick)
+    btn.addEventListener("click", () => {
+      handleClick(btn);
+    });
     btn.classList.add("btn");
     container.appendChild(btn);
   }
-}
-getBtns();
-
-function getRandomWord(){
 
   const random = wordList[Math.floor(Math.random() * wordList.length - 1)];
-  const div = document.createElement('div');
-  div.classList.add('category');
+  const div = document.createElement("div");
+  div.classList.add("category");
   div.textContent = `Your word is in category: ${random.category}`;
   box.appendChild(div);
 
   let word = random.names[Math.floor(Math.random() * random.names.length)];
-  for ( let i = 0; i < word.length ; i++){
+  for (let i = 0; i < word.length; i++) {
     let slash = document.createElement("p");
-    slash.classList.add('slash');
-    slash.innerText = '_';
-    slash.id = word[i]; 
-    toGuess.appendChild(slash)
+    slash.classList.add("slash");
+    slash.innerText = "_";
+    slash.id = word[i];
+    toGuess.appendChild(slash);
   }
 }
-getRandomWord()
-function handleClick(){
+getWord();
 
-}
+
+function handleClick(btn) {}
