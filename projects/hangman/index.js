@@ -84,11 +84,11 @@ function getWord() {
   div.textContent = `Your word is in category: ${random.category}`;
   box.appendChild(div);
 
-  let word = random.names[Math.floor(Math.random() * random.names.length)];
+  let word = random.names[Math.floor(Math.random() * random.names.length)].toLowerCase();
   for (let i = 0; i < word.length; i++) {
     let slash = document.createElement("p");
     slash.classList.add("slash");
-    slash.innerText = "_";
+    slash.innerText = word[i] === " " ? " " :"_";
     slash.id = word[i];
     toGuess.appendChild(slash);
   }
@@ -96,4 +96,12 @@ function getWord() {
 getWord();
 
 
-function handleClick(btn) {}
+function handleClick(btn) {
+  const letter = btn.innerText;
+  document.querySelectorAll('.slash').forEach((word) =>{
+    if(word.id == letter){
+      word.innerText = letter;
+    }
+  })
+}
+handleClick()
