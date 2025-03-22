@@ -108,8 +108,8 @@ function handleClick(btn) {
     }
   })
   if(!found){
-    wrongGuess++
-    drawMan()
+    wrongGuess++;
+    drawMan();
   }
 }
 function drawMan(){
