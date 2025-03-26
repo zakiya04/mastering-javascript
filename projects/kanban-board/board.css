@@ -6,10 +6,38 @@
 body{
     background-color: black;
 }
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 #title{
     padding: 5px;
     text-align: center;
     font-size: 50px;
     font-weight: 1000;
     color: white;
+    margin-bottom: 10px;
+}
+#boxes{
+    width: 70%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.to-do{
+    background-color: rgb(60, 60, 60);
+    border-radius: 10px;
+}
+.progress{
+    background-color: rgb(60, 60, 60);
+    border-radius: 10px;
+}
+.completed{
+    background-color: rgb(60, 60, 60);
+    border-radius: 10px;
 }
