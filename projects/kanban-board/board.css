@@ -38,6 +38,9 @@ h3{
     color: white;
     cursor: pointer;
 }
+#btn:hover{
+    background-color: black;
+}
 #boxes{
     width: 70%;
     height: 80%;
