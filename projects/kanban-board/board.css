@@ -39,7 +39,7 @@ h3{
     cursor: pointer;
 }
 #btn:hover{
-    background-color: black;
+    background-color: rgb(42, 32, 32);
 }
 #boxes{
     width: 70%;
