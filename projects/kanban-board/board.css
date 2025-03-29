@@ -28,7 +28,7 @@ h3{
     color:azure;
     margin: 5px;
 }
-#btn{
+.btn{
     width: 95%;
     padding: 20px;
     background-color: black;
@@ -38,7 +38,7 @@ h3{
     color: white;
     cursor: pointer;
 }
-#btn:hover{
+.btn:hover{
     background-color: rgb(42, 32, 32);
 }
 #boxes{
@@ -56,6 +56,13 @@ h3{
     align-items: center;
     justify-content: start;
     gap: 10px;
+}
+.input{
+    padding: 20px;
+    width: 95%;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
 }
 .progress{
     background-color: rgb(60, 60, 60);
