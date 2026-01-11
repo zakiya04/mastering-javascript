@@ -9,7 +9,7 @@ switch(command){
     break;
 
     case 'list':
-        todo.listTask();
+        todo.listTasks();
     break;
 
     case 'delete':
