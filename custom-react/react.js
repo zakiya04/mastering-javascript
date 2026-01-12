@@ -11,7 +11,7 @@ function createElement(element, container){
 
     const domElement = document.createElement(element.type)
     domElement.innerHTML = element.children;
-    for (const prop in reactElement.props) {
+    for (const prop in element.props) {
         if (prop === "children") continue
         domElement.setAttribute(prop, element.props[prop])
     };
@@ -21,7 +21,7 @@ function createElement(element, container){
 
 const reactElement = {
     type: "a",
-    childern:"Click to go to Google",
+    children:"Click to go to Google",
     props: {
         href:"https://google.com",
         target:"_blank"
